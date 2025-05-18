@@ -1,0 +1,18 @@
+driver:
+  addresses:
+    fixed: 192.168.2.51
+    floating: 130.238.29.153
+  id: 961b1cb8-6761-4652-ab2a-3a40df24ed0d
+nodes:
+- addresses:
+    fixed: 192.168.2.81
+    floating: null
+  id: 3127e9b2-3ba3-474e-83fe-c088c4914fa4
+- addresses:
+    fixed: 192.168.2.218
+    floating: null
+  id: f71d6555-99a3-43e2-a735-88212278641e
+- addresses:
+    fixed: 192.168.2.86
+    floating: null
+  id: e51606d4-2e14-4f55-9054-a46e8d0afa3a

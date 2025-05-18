@@ -1,0 +1,10 @@
+name: group07
+image: Ubuntu 22.04 - 2024.01.15
+network: UPPMAX 2025/1-1 Internal IPv4 Network
+auto_ip: true
+flavor: ssc.small.highmem
+boot_from_volume: true
+terminate_volume: true
+key_name: db1
+security_groups:
+  - default
