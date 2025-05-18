@@ -77,3 +77,6 @@ ansible:
   install_method: pip
   package_name: ansible-core
   run_user: ansible
+
+runcmd:
+  - git clone git@github.com:DEII-Project/kube-cluster.git /home/ansible/

@@ -144,6 +144,22 @@ def create_driver(conn, instance_config, userdata, nodes):
     return driver_host
 
 
+def create_inventories(nodes):
+    with open("./ansible/inventory.yaml", "w") as file:
+        inventory = {
+            "kube_control_plane": {
+                "hosts": {"node-{0}": {"host": nodes[0]["addresses"]["fixed"]}}
+            },
+            "kube_workers": {
+                "hosts": {
+                    f"node-{i + 1}": {"host": node["addresses"]["fixed"]}
+                    for i, node in enumerate(nodes[1:])
+                }
+            },
+        }
+        yaml.dump(inventory, file)
+
+
 def create_cluster(args):
     hosts = {"driver": {}, "nodes": []}
     conn = create_connection("credentials/clouds.yaml")
@@ -155,6 +171,9 @@ def create_cluster(args):
     hosts["nodes"] = nodes
     with open("./config/hosts.yaml", "w") as file:
         yaml.dump(hosts, file)
+
+    # create ansible inventory
+    create_inventories(nodes)
 
     # Create driver
     driver_userdata = "./config/instance/driver_userdata.yaml"

@@ -1,16 +1,12 @@
 kube_control_plane:
   hosts:
-    node-0:
-      host: 192.168.2.179
-    node-1:
-      host: 192.168.2.46
-    node-2:
-      host: 192.168.2.81
-
+    node-{0}:
+      host: 192.168.2.51
 kube_workers:
   hosts:
-    node_1:
-      ansible_host: 192.168.2.46
-  vars:
-    ansible_connection: ssh
-    ansible_user: ansible
+    node-1:
+      host: 192.168.2.100
+    node-2:
+      host: 192.168.2.66
+    node-3:
+      host: 192.168.2.204
