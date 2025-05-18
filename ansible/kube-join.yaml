@@ -9,7 +9,7 @@
 
     - name: Write the join command locally
       ansible.builtin.copy:
-        content: "{{kubernetes_join_command}}"
+        content: "{{kubernetes_join_command.stdout}}"
         dest: ./join-command
       delegate_to: localhost
 
