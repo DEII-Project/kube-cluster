@@ -20,6 +20,7 @@
       ansible.builtin.copy:
         src: ./join-command
         dest: /home/ansible/join-command
+        mode: "0100"
 
     - name: Run the join command
       become: yes
