@@ -24,7 +24,7 @@
     - name: Run the join command
       become: yes
       become_user: root
-      command: sh "{{kubernetes_join_command.stdout}}"
+      command: sh /home/ansible/join-command
       register: joined_or_not
 
     - name: Node join status
