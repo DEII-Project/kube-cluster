@@ -148,7 +148,7 @@ def create_inventories(nodes):
     with open("./ansible/inventory.yaml", "w") as file:
         inventory = {
             "kube_control_plane": {
-                "hosts": {"node-{0}": {"host": nodes[0]["addresses"]["fixed"]}}
+                "hosts": {"node-0": {"host": nodes[0]["addresses"]["fixed"]}}
             },
             "kube_workers": {
                 "hosts": {

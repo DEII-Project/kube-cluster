@@ -1,6 +1,6 @@
 kube_control_plane:
   hosts:
-    node-{0}:
+    node-0:
       host: 192.168.2.51
 kube_workers:
   hosts:
