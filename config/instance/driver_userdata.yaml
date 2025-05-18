@@ -24,6 +24,12 @@ write_files:
     permissions: 0o600
     defer: true
     content: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFkkO+n+YrlRcSm9ybiFCCa8WaTCohOITG+Ir3IvVG3cl8tmTogGyGAxpxoeyYf9odTfJKEtrSJwq4Rrn6TKjY4hK6elHKWSxK4tjEAPKrVqYVzawkWWgU5eXcXdQAK4CwZe0Qu21aavtV72v7Rm3BP8wcIPm10AgSLKqzF5ED3zsIyRfaeecdIUyzPiz61fxAc4KqOlzEEq3/roevyYvTVnUT6wwC0hjJJ2DExdchirAc+yYNhjWuH+NCDEm6x64OuFfhXB8WZdsdCnb5cx8rQWu4oKzy3N6tKlk0YrkHJcF9FGJXJGGhos0rCZupX3K/QZigVWanvRjLaF10awQI0owKtG+RVRtck5lK/6BC9uebj9U75rZZNSVnu6Xg5EQRqvXgEcMd4EDCvFnc2cBAKKQn6JUHmGBBe75CgSy2BegOAzGie2u7Z6GicYaZeMaj0/zfhC1BcMb4fEW9yipLyTkC9Xlu0ETFiAgyBXnkEegPW6ilpG93Z3hcGp2HQpE= shahab@shahab-x542urr546897
+  - path: /home/ansible/.ssh/id_rsa
+    owner: ansible:ansible
+    permissions: 0o600
+    defer: true
+    content: |
       -----BEGIN OPENSSH PRIVATE KEY-----
       b3BlbnNzaC1rZXktdjEAAAAABG5vbmUAAAAEbm9uZQAAAAAAAAABAAABlwAAAAdzc2gtcn
       NhAAAAAwEAAQAAAYEAxZJDvp/mK5UXEpvcm4hQgmvFmkwqITiExviK9yL1Rt3JfLZk6IBs
