@@ -2,6 +2,7 @@
   tasks:
     - name: Initialize k8s cluster
       shell: kubeadm init --pod-network-cidr=10.244.0.0/16
+      become: true
       args:
         chdir: $HOME
         creates: cluster_initialized.txt
@@ -19,8 +20,8 @@
         src: /etc/kubernetes/admin.conf
         dest: /home/ansible/.kube/config
         remote_src: true
-        owner: ansible:ansible
-      become: yes
+        owner: ansible
+      become: true
       become_user: root
 
     - name: Install Pod network
