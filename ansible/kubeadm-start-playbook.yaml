@@ -1,7 +1,4 @@
 - hosts: kube_control_plane
-  become: yes
-  vars_files:
-    - ../../vars.yml
   tasks:
     - name: Initialize k8s cluster
       shell: kubeadm init --pod-network-cidr=10.244.0.0/16
@@ -42,9 +39,6 @@
 
 - hosts: kube_workers
   become: yes
-  gather_facts: yes
-  vars_files:
-    - ../../vars.yml
   tasks:
     - name: Join the Worker nodes to the cluster.
       become: yes
