@@ -1,0 +1,20 @@
+- hosts: kube_control_plane
+  tasks:
+    - name: Get token to join worker nodes to k8s cluster
+      become: yes
+      become_user: root
+      ansible.builtin.shell: kubeadm token create --print-join-command
+      register: kubernetes_join_command
+
+- hosts: kube_workers
+  become: yes
+  tasks:
+    - name: Join the Worker nodes to the cluster.
+      become: yes
+      become_user: root
+      command: sh {{ kubernetes_join_command.stdout }}
+      register: joined_or_not
+
+    - name: Node join status
+      ansible.builtin.debug:
+        msg: "{{ joined_or_not.stdout }}"
