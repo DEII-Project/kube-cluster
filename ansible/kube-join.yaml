@@ -21,6 +21,7 @@
         src: ./join-command
         dest: /home/ansible/join-command
         mode: "0100"
+        owner: root
 
     - name: Run the join command
       become: yes
