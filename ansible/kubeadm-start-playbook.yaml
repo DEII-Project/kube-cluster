@@ -23,6 +23,8 @@
         dest: /home/ansible/.kube/config
         remote_src: true
         owner: ansible:ansible
+      become: yes
+      become_user: root
 
     - name: Install Pod network
       become: yes
