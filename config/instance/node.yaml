@@ -1,9 +1,0 @@
-name: group07
-image: Ubuntu 22.04 - 2024.01.15
-network: UPPMAX 2025/1-1 Internal IPv4 Network
-auto_ip: false
-flavor: ssc.medium
-boot_from_volume: true
-terminate_volume: true
-security_groups:
-  - default
