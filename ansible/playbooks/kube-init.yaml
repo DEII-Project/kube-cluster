@@ -1,0 +1,34 @@
+- hosts: kube_control_plane
+  tasks:
+    - name: Initialize k8s cluster
+      become: true
+      shell: kubeadm init --pod-network-cidr=10.244.0.0/16
+      args:
+        chdir: $HOME
+        creates: cluster_initialized.txt
+
+    - name: Create .kube directory
+      become: true
+      become_user: ansible
+      ansible.builtin.file:
+        path: $HOME/.kube
+        state: directory
+        mode: "0755"
+
+    - name: Copy admin.conf to user kube config
+      become: true
+      become_user: root
+      copy:
+        src: /etc/kubernetes/admin.conf
+        dest: /home/ansible/.kube/config
+        remote_src: true
+        permissions: "0644"
+        owner: ansible
+
+    - name: Install Pod network
+      become: true
+      become_user: ansible
+      ansible.builtin.shell: |
+        kubectl create -f https://raw.githubusercontent.com/projectcalico/calico/v3.30.0/manifests/canal.yaml
+      args:
+        chdir: $HOME

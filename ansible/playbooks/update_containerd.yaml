@@ -1,0 +1,17 @@
+- name: Update containerd config
+  hosts: all
+  tasks:
+    - name: Copy containerd config
+      ansible.builtin.copy:
+        src: ../k8s/containerd/config.toml
+        dest: /etc/containerd/config.toml
+        owner: root
+        group: root
+        mode: "0644"
+      become: true
+      become_user: root
+    - name: Restart containerd
+      ansible.builtin.command:
+        argv: ["systemctl", "restart", "containerd.service"]
+      become: true
+      become_user: root

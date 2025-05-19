@@ -1,0 +1,82 @@
+#cloud-config
+
+ssh_pwauth: false
+package_update: true
+package_upgrade: true
+
+users:
+  - default
+  - name: ansible
+    gecos: Ansible User
+    shell: /bin/bash
+    groups: users,admin,wheel
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMvcsaBqwk+zihKMNe2nMTt6NUwoqZugLN96RGf9JU/X shahab@shahab-x542urr546897
+
+packages:
+  - python3-pip
+  - git
+
+write_files:
+  - path: /home/ansible/.ssh/id_rsa
+    owner: ansible:ansible
+    permissions: 0o600
+    defer: true
+    content: |
+      ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDFkkO+n+YrlRcSm9ybiFCCa8WaTCohOITG+Ir3IvVG3cl8tmTogGyGAxpxoeyYf9odTfJKEtrSJwq4Rrn6TKjY4hK6elHKWSxK4tjEAPKrVqYVzawkWWgU5eXcXdQAK4CwZe0Qu21aavtV72v7Rm3BP8wcIPm10AgSLKqzF5ED3zsIyRfaeecdIUyzPiz61fxAc4KqOlzEEq3/roevyYvTVnUT6wwC0hjJJ2DExdchirAc+yYNhjWuH+NCDEm6x64OuFfhXB8WZdsdCnb5cx8rQWu4oKzy3N6tKlk0YrkHJcF9FGJXJGGhos0rCZupX3K/QZigVWanvRjLaF10awQI0owKtG+RVRtck5lK/6BC9uebj9U75rZZNSVnu6Xg5EQRqvXgEcMd4EDCvFnc2cBAKKQn6JUHmGBBe75CgSy2BegOAzGie2u7Z6GicYaZeMaj0/zfhC1BcMb4fEW9yipLyTkC9Xlu0ETFiAgyBXnkEegPW6ilpG93Z3hcGp2HQpE= shahab@shahab-x542urr546897
+  - path: /home/ansible/.ssh/id_rsa
+    owner: ansible:ansible
+    permissions: 0o600
+    defer: true
+    content: |
+      -----BEGIN OPENSSH PRIVATE KEY-----
+      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
+      -----END OPENSSH PRIVATE KEY-----
+  - path: /etc/hosts
+    append: true
+    content: |
+      NODENAMES
+
+ansible:
+  install_method: pip
+  package_name: ansible-core
+  run_user: ansible
+
+runcmd:
+  - git clone git@github.com:DEII-Project/kube-cluster.git /home/ansible/
