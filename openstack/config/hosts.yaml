@@ -1,2 +1,14 @@
-driver: {}
-nodes: []
+driver:
+  addresses:
+    fixed: 192.168.2.27
+    floating: 130.238.29.137
+  id: 5aaf3e9c-992b-4525-b80b-57989c9f8344
+nodes:
+- addresses:
+    fixed: 192.168.2.122
+    floating: null
+  id: 400981dc-101f-4005-9f32-61c060a7e500
+- addresses:
+    fixed: 192.168.2.243
+    floating: null
+  id: f97dc9e6-4026-419f-80e9-347b755bbb5f

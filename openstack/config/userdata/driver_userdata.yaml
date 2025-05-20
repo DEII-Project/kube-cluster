@@ -1,0 +1,46 @@
+#cloud-config
+
+ssh_pwauth: false
+package_update: false
+package_upgrade: false
+
+users:
+  - default
+  - name: ansible
+    gecos: Ansible User
+    shell: /bin/bash
+    groups: users,admin,wheel
+    sudo: "ALL=(ALL) NOPASSWD:ALL"
+    ssh_authorized_keys:
+      - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMvcsaBqwk+zihKMNe2nMTt6NUwoqZugLN96RGf9JU/X shahab@shahab-x542urr546897
+
+packages:
+  - python3-pip
+  - git
+
+write_files:
+  - path: /home/ansible/.ssh/id_rsa
+    owner: ansible:ansible
+    permissions: 0o600
+    defer: true
+    content: |
+      ANSIBLE_PRIVATE_KEY
+  - path: /etc/hosts
+    append: true
+    content: "NODENAMES"
+  - path: /etc/ansible/hosts
+    append: true
+    content: "ANSIBLE_INVENTORY"
+
+ansible:
+  package_name: ansible-core
+  install_method: distro
+  run_user: ansible
+#   pull:
+#     url: git@github.com:DEII-Project/kube-cluster.git
+#     playbook_name: ansible/playbooks/k8s.yaml
+#     accept_host_key: true
+#     private_key: /home/ansible/.ssh/id_rsa
+runcmd:
+  - git clone --config core.sshCommand="ssh -i /home/ansible/.ssh/id_rsa" git@github.com:DEII-Project/kube-cluster.git /home/ansible/kube-cluster
+#   - ansible-pull --accept-host-key --private-key /home/ansible/.ssh/id_rsa ansible/playbooks/k8s.yaml
