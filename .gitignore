@@ -1,2 +1,4 @@
 credentials/
 config/instance/keys
+*sensitive*
+__pycache__/
