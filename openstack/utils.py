@@ -35,7 +35,9 @@ def create_instance(conn, instance_dict_or_path, userdata_filename, postfix=""):
         instance_config = copy(instance_dict_or_path)
     instance_config["name"] = f"{instance_config['name']}{postfix}"
     with open(userdata_filename, "r") as file:
-        server = conn.create_server(**instance_config, wait=True, userdata=file)
+        server = conn.create_server(
+            **instance_config, wait=True, userdata=file, timeout=600
+        )
         ips = get_instance_ips(server)
     print(f"Created server: {server.name} with ID: {server.id} and IP: {ips}")
     return server, ips
