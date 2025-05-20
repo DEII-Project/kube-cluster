@@ -22,7 +22,7 @@ write_files:
   - path: /home/ansible/.ssh/id_rsa
     owner: ansible:ansible
     permissions: 0o600
-    defer: true
+    defer: false
     content: |
       ANSIBLE_PRIVATE_KEY
   - path: /etc/hosts
