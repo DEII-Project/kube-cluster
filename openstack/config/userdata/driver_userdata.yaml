@@ -13,16 +13,35 @@ users:
     sudo: "ALL=(ALL) NOPASSWD:ALL"
     ssh_authorized_keys:
       - ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIMvcsaBqwk+zihKMNe2nMTt6NUwoqZugLN96RGf9JU/X shahab@shahab-x542urr546897
+      - ANSIBLE_PUBLIC_KEY
+apt:
+  sources:
+    docker.list:
+      source: deb [arch=amd64] https://download.docker.com/linux/ubuntu $RELEASE stable
+      keyid: 9DC858229FC7DD38854AE2D88D81803C0EBFCD88
+    kubernetes.list:
+      source: deb https://pkgs.k8s.io/core:/stable:/v1.33/deb/ /
+      keyid: DE15B14486CD377B9E876E1A234654DA9A296436
 
 packages:
+  - apt-transport-https
+  - ca-certificates
+  - curl
+  - gpg
   - python3-pip
   - git
+  - docker-ce
+  - docker-ce-cli
+  - containerd.io
+  - docker-buildx-plugin
+  - docker-compose-plugin
+  - kubectl
 
 write_files:
   - path: /home/ansible/.ssh/id_rsa
     owner: ansible:ansible
     permissions: 0o600
-    defer: false
+    defer: True
     content: |
       ANSIBLE_PRIVATE_KEY
   - path: /etc/hosts
@@ -41,6 +60,6 @@ ansible:
 #     playbook_name: ansible/playbooks/k8s.yaml
 #     accept_host_key: true
 #     private_key: /home/ansible/.ssh/id_rsa
-runcmd:
-  - git clone --config core.sshCommand="ssh -i /home/ansible/.ssh/id_rsa" git@github.com:DEII-Project/kube-cluster.git /home/ansible/kube-cluster
+# runcmd:
+#   - git clone --config core.sshCommand="ssh -i /home/ansible/.ssh/id_rsa" git@github.com:DEII-Project/kube-cluster.git /home/ansible/kube-cluster
 #   - ansible-pull --accept-host-key --private-key /home/ansible/.ssh/id_rsa ansible/playbooks/k8s.yaml
