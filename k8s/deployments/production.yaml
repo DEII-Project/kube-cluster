@@ -1,0 +1,33 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: production
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: stargazer
+  template:
+    metadata:
+      labels:
+        app: stargazer
+    spec:
+      containers:
+      - name: web
+        image: 192.168.2.53:32228/model:latest
+        ports:
+          - containerPort: 5100
+
+      - name: worker-1
+        image: 192.168.2.53:32228/model-worker:latest
+          
+      - name: rabbit
+        image: rabbitmq:management
+        ports:
+          - containerPort: 5672
+          - containerPort: 15672
+        env:
+        - name: RABBITMQ_DEFAULT_USER
+          value: "rabbitmq"
+        - name: RABBITMQ_DEFAULT_PASS
+          value: "rabbitmq"

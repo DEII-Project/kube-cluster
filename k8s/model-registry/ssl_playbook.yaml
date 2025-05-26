@@ -1,0 +1,16 @@
+- name: adds tls certificates to nodes
+  hosts: all
+  tasks:
+    - name: copy certificates to os level
+      become: true
+      ansible.builtin.copy:
+        src: certs/registry.crt
+        dest: /usr/local/share/ca-certificates/registry.crt
+    - name: update certificates
+      become: true
+      shell: update-ca-certificates
+
+    - name: restart containerd
+      become: true
+      shell: systemctl restart containerd.service
+
