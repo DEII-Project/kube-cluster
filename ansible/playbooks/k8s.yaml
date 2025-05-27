@@ -42,6 +42,13 @@
         remote_src: true
         owner: ansible
 
+    - name: Fetch admin config
+      ansible.builtin.fetch:
+        fail_on_missing: false
+        flat: true
+        src: /home/ansible/.kube/config
+        dest: /home/ansible/.kube/
+
     - name: Install Pod network
       become: true
       become_user: ansible
