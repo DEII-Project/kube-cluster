@@ -45,3 +45,5 @@ Now it is possible to interact with K8s using `kubectl` from the driver instance
 Now the registry service is running and can be accessed at `<node-0 IP>:32228` both from the driver instance and from the other nodes.
 
 ## Starting the App service
+
+## CI/CD
