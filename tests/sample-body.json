@@ -1,0 +1,184 @@
+[
+  {
+    "createdAt": "2015-06-23T10:26:27Z",
+    "forksCount": 7290,
+    "fullName": "nginx/nginx",
+    "hasWiki": true,
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "language": "C",
+    "license": {
+      "key": "bsd-2-clause",
+      "name": "BSD 2-Clause \"Simplified\" License",
+      "url": "https://api.github.com/licenses/bsd-2-clause"
+    },
+    "openIssuesCount": 226,
+    "owner": {
+      "id": "MDEyOk9yZ2FuaXphdGlvbjE0MTIyMzk=",
+      "is_bot": false,
+      "login": "nginx",
+      "type": "Organization",
+      "url": "https://github.com/nginx"
+    },
+    "size": 74814,
+    "stargazersCount": 26882,
+    "watchersCount": 26882
+  },
+  {
+    "createdAt": "2023-08-28T02:18:13Z",
+    "forksCount": 3387,
+    "fullName": "OpenBMB/ChatDev",
+    "hasWiki": false,
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "language": "Python",
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "url": "https://api.github.com/licenses/apache-2.0"
+    },
+    "openIssuesCount": 47,
+    "owner": {
+      "id": "MDEyOk9yZ2FuaXphdGlvbjg5OTIwMjAz",
+      "is_bot": false,
+      "login": "OpenBMB",
+      "type": "Organization",
+      "url": "https://github.com/OpenBMB"
+    },
+    "size": 242627,
+    "stargazersCount": 26854,
+    "watchersCount": 26854
+  },
+  {
+    "createdAt": "2020-03-14T11:46:39Z",
+    "forksCount": 3324,
+    "fullName": "JaidedAI/EasyOCR",
+    "hasWiki": true,
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "language": "Python",
+    "license": {
+      "key": "apache-2.0",
+      "name": "Apache License 2.0",
+      "url": "https://api.github.com/licenses/apache-2.0"
+    },
+    "openIssuesCount": 494,
+    "owner": {
+      "id": "MDEyOk9yZ2FuaXphdGlvbjYxNDQ4MDI5",
+      "is_bot": false,
+      "login": "JaidedAI",
+      "type": "Organization",
+      "url": "https://github.com/JaidedAI"
+    },
+    "size": 161624,
+    "stargazersCount": 26626,
+    "watchersCount": 26626
+  },
+  {
+    "createdAt": "2022-11-28T14:08:44Z",
+    "forksCount": 2009,
+    "fullName": "roboflow/supervision",
+    "hasWiki": true,
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "language": "Python",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "url": "https://api.github.com/licenses/mit"
+    },
+    "openIssuesCount": 118,
+    "owner": {
+      "id": "MDEyOk9yZ2FuaXphdGlvbjUzMTA0MTE4",
+      "is_bot": false,
+      "login": "roboflow",
+      "type": "Organization",
+      "url": "https://github.com/roboflow"
+    },
+    "size": 2186920,
+    "stargazersCount": 26605,
+    "watchersCount": 26605
+  },
+  {
+    "createdAt": "2024-04-08T16:58:11Z",
+    "forksCount": 3057,
+    "fullName": "karpathy/llm.c",
+    "hasWiki": true,
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "language": "Cuda",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "url": "https://api.github.com/licenses/mit"
+    },
+    "openIssuesCount": 200,
+    "owner": {
+      "id": "MDQ6VXNlcjI0MTEzOA==",
+      "is_bot": false,
+      "login": "karpathy",
+      "type": "User",
+      "url": "https://github.com/karpathy"
+    },
+    "size": 2144,
+    "stargazersCount": 26598,
+    "watchersCount": 26598
+  },
+  {
+    "createdAt": "2015-10-05T15:45:36Z",
+    "forksCount": 3607,
+    "fullName": "quasarframework/quasar",
+    "hasWiki": false,
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "language": "JavaScript",
+    "license": {
+      "key": "mit",
+      "name": "MIT License",
+      "url": "https://api.github.com/licenses/mit"
+    },
+    "openIssuesCount": 641,
+    "owner": {
+      "id": "MDEyOk9yZ2FuaXphdGlvbjIzMDY0Mzcx",
+      "is_bot": false,
+      "login": "quasarframework",
+      "type": "Organization",
+      "url": "https://github.com/quasarframework"
+    },
+    "size": 448684,
+    "stargazersCount": 26586,
+    "watchersCount": 26586
+  },
+  {
+    "createdAt": "2018-01-25T03:46:34Z",
+    "forksCount": 1557,
+    "fullName": "dwmkerr/hacker-laws",
+    "hasWiki": true,
+    "isArchived": false,
+    "isFork": false,
+    "isPrivate": false,
+    "language": "HTML",
+    "license": {
+      "key": "cc-by-sa-4.0",
+      "name": "Creative Commons Attribution Share Alike 4.0 International",
+      "url": "https://api.github.com/licenses/cc-by-sa-4.0"
+    },
+    "openIssuesCount": 149,
+    "owner": {
+      "id": "MDQ6VXNlcjE5MjY5ODQ=",
+      "is_bot": false,
+      "login": "dwmkerr",
+      "type": "User",
+      "url": "https://github.com/dwmkerr"
+    },
+    "size": 2767,
+    "stargazersCount": 26557,
+    "watchersCount": 26557
+  }
+]
