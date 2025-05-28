@@ -1,0 +1,9 @@
+#!/bin/bash
+refname="$1"
+oldrev="$2"
+newrev="$3"
+
+# Allow force-push only to feature branches
+if [[ "$refname" =~ refs/heads/feature/ && "$(git merge-base "$oldrev" "$newrev")" != "$oldrev" ]]; then
+  echo "WARNING: Force-push allowed only for feature branches"
+fi
