@@ -1,0 +1,19 @@
+#!/bin/bash
+while read oldrev newrev refname; do
+  # Validate Kubernetes YAML files
+  if git diff --name-only $oldrev $newrev | grep -q 'k8s/.*\.yaml'; then
+    echo "Validating Kubernetes manifests..."
+    git diff --name-only $oldrev $newrev | grep 'k8s/.*\.yaml' | while read file; do
+      if ! kubectl apply --dry-run=server -f "$file"; then
+        echo "ERROR: Invalid Kubernetes manifest in $file"
+        exit 1
+      fi
+    done
+  fi
+
+  # Block direct pushes to main branch
+  if [[ "$refname" = "refs/heads/main" ]]; then
+    echo "ERROR: Direct pushes to main are blocked. Use a PR."
+    exit 1
+  fi
+done

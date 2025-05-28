@@ -1,0 +1,18 @@
+#!/bin/bash
+DEPLOY_NS="production"  # Target namespace
+
+while read oldrev newrev refname; do
+  if [[ "$refname" = "refs/heads/main" ]]; then
+    echo "Deploying to Kubernetes..."
+    
+    # Apply all manifests
+    kubectl apply -f k8s/ -n $DEPLOY_NS
+    
+    # Verify deployment
+    kubectl rollout status deployment/app -n $DEPLOY_NS || {
+      echo "Deployment failed!"
+      kubectl get pods -n $DEPLOY_NS | grep -v Running
+      exit 1
+    }
+  fi
+done
