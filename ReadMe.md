@@ -47,36 +47,3 @@ Now the registry service is running and can be accessed at `<node-0 IP>:32228` b
 ## Starting the App service
 
 ## CI/CD
-Once the Kubernetes cluster and private registry are set up, the App service is deployed using a CI/CD pipeline. 
-This pipeline automatically builds the application’s Docker image, pushes it to the internal registry, and deploys it to the Kubernetes cluster using kubectl apply.
-The CI/CD process can be triggered on code changes (e.g., push to main or production branches) via tools like GitHub Actions or Git hooks. 
-This ensures the latest code is continuously integrated, tested, and deployed without manual intervention.
-
-# Readme
-.
-├── .ansible/               # Ansible configuration and cache files
-├── .git/                   # Git version control metadata
-│ ├── hooks/                # CI/CD git hooks (pre-receive, post-receive)
-│ ├── config                # Git repository configuration
-│ └── ...                   # Other git internals
-├── ansible/                # Infrastructure as Code
-│ ├── playbooks/            # Ansible playbooks for provisioning
-│ ├── inventory/            # Server inventory files
-│ └── roles/                # Reusable Ansible roles
-├── k8s/                    # Kubernetes configurations
-│ ├── deployments/          # Deployment manifests
-│ ├── services/             # Service definitions
-│ ├── ingress/              # Ingress controllers
-│ └── secrets/              # Kubernetes secrets (encrypted)
-├── model_serving/          # ML Model Serving
-│ ├── ci_cd/                # CI/CD pipelines
-│ ├── models/               # Trained model files
-│ └── serving/              # Model serving configurations
-├── openstack/              # OpenStack configurations
-│ ├── templates/            # Heat templates
-│ └── scripts/              # Deployment scripts
-├── .gitignore              # Files to ignore in version control
-├── DE-II_project_3.pdf     # Project documentation
-├── requirements.txt        # Python dependencies
-├── README.md               # Project overview
-└── STRUCTURE.md            # Auto-generated structure
