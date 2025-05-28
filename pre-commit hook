@@ -1,0 +1,14 @@
+#!/bin/bash
+# Validate YAML syntax
+find k8s/ -name '*.yaml' | while read file; do
+  if ! yamllint "$file"; then
+    echo "YAML syntax error in $file"
+    exit 1
+  fi
+done
+
+# Check for sensitive data
+if grep -r 'password\|secret' k8s/; then
+  echo "ERROR: Potential secrets in manifests!"
+  exit 1
+fi
