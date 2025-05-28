@@ -47,3 +47,22 @@ Now the registry service is running and can be accessed at `<node-0 IP>:32228` b
 ## Starting the App service
 
 ## CI/CD
+
+
+
+.
+├── ansible
+│   ├── configs
+│   └── playbooks
+├── k8s
+│   ├── deployments
+│   └── model-registry
+├── model_serving
+│   ├── ci_cd
+│   ├── openstack-client
+│   ├── single_server_with_docker
+│   └── single_server_without_docker
+└── openstack
+    ├── __pycache__
+    ├── config
+    └── credentials
